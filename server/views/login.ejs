@@ -1,0 +1,71 @@
+<hr />
+<section>
+  <center>
+    <form action="/login" method="post">
+      <fieldset>
+        <br />
+        <h3>Login form</h3>
+        <br />
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" name="email" value="<%= email %>" />
+        </div>
+        <br />
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" value="<%= password %>" />
+        </div>
+        <br />
+        <div>
+          <input type="submit" value="Login" />
+        </div>
+        <br />
+      </fieldset>
+    </form>
+  </center>
+</section>
+<hr />
+<section>
+  <center>
+    <form action="/api/Customers" method="post">
+      <br />
+      <fieldset>
+        <h3>Registration form</h3>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" name="email" value="<%= email %>" />
+        </div>
+        <br />
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" value="<%= password %>" />
+        </div>
+        <br />
+        <div>
+          <input type="submit" value="Register" />
+        </div>
+        <br />
+      </fieldset>
+    </form>
+  </center>
+</section>
+<hr />
+<section>
+  <center>
+    <form action="/request-password-reset" method="post">
+      <fieldset>
+        <h3>Reset password form</h3>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" name="email" value="<%= email %>" />
+        </div>
+        <br />
+        <div>
+          <input type="submit" value="Reset password" />
+        </div>
+        <br />
+      </fieldset>
+    </form>
+  </center>
+</section>

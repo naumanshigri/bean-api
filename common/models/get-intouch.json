@@ -1,0 +1,45 @@
+{
+  "name": "getIntouch",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "MySql",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "MySql",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "MySql",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "MySql",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "Customer": {
+    "dataSource": "MySql",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "walkthrough": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "profile": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "wishlist": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "product": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "getIntouch": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "order": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "orderProduct": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "rating": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "Push": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "admin": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "payment": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "device": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "notification": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "store": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "inventory": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "franchise": {
+    "dataSource": "MySql",
+    "public": true
+  },
+  "test": {
+    "dataSource": "MySql",
+    "public": true
+  }
+}

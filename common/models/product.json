@@ -1,0 +1,106 @@
+{
+  "name": "product",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "brownSugar": {
+      "type": "string"
+    },
+    "cups": {
+      "type": "string"
+    },
+    "miligram": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "milkType": {
+      "type": "string"
+    },
+    "soucesType": {
+      "type": "string"
+    },
+    "flavoursType": {
+      "type": "string"
+    },
+    "CreamsType": {
+      "type": "string"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    },
+    "franchiesId": {
+      "type": "number"
+    },
+    "addedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "wishlists": {
+      "type": "hasMany",
+      "model": "wishlist",
+      "foreignKey": "productId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Customer"
+    },
+    "orderProducts": {
+      "type": "hasMany",
+      "model": "orderProduct",
+      "foreignKey": "productId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "product"
+    },
+    "ratings": {
+      "type": "hasMany",
+      "model": "rating",
+      "foreignKey": "productId",
+      "through": "product"
+    },
+    "inventories": {
+      "type": "hasMany",
+      "model": "inventory",
+      "foreignKey": "productId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "product"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

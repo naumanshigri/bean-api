@@ -1,0 +1,40 @@
+{
+  "name": "payment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cardNumber": {
+      "type": "number",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "TotalAmount": {
+      "type": "number",
+      "required": true
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,15 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "generateOperationScopedModels": true,
+    "uiDirs": ["server/explorer"],
+    "apiInfo": {
+      "title": "BeanBrand API",
+      "description": "BeanBrand API Explorer"
+    }
+  },
+  "loopback3-xtotalcount": {
+    "pattern": ["*.find"],
+    "relationMethodNames": ["prototype.__get__chapters"]
+  }
+}

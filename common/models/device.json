@@ -1,0 +1,39 @@
+{
+  "name": "device",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "deviceId": {
+      "type": "string"
+    },
+    "deviceStatus": {
+      "type": "boolean"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

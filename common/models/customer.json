@@ -1,0 +1,206 @@
+{
+  "name": "Customer",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "restrictResetPasswordTokenScope": true,
+  "emailVerificationRequired": true,
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "franchiseId": {
+      "type": "number"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "profiles": {
+      "type": "hasOne",
+      "model": "profile",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    },
+    "wishlists": {
+      "type": "hasMany",
+      "model": "wishlist",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      },
+      "through": "Customer"
+    },
+    "orders": {
+      "type": "hasMany",
+      "model": "order",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Customer"
+    },
+    "ratings": {
+      "type": "hasMany",
+      "model": "rating",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Customer"
+    },
+    "devices": {
+      "type": "hasMany",
+      "model": "device",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Customer"
+    },
+    "notifications": {
+      "type": "hasMany",
+      "model": "notification",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Customer"
+    },
+    "getIntouches": {
+      "type": "hasMany",
+      "model": "getIntouch",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "inventories": {
+      "type": "hasMany",
+      "model": "inventory",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": "userId"
+    }
+  },
+  "hidden": ["password", "verificationToken"],
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "deleteById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "logout"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "findById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "patchAttributes"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "replaceById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "verify",
+      "accessType": "EXECUTE"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "confirm"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "resetPassword",
+      "accessType": "EXECUTE"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "changePassword",
+      "accessType": "EXECUTE"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "setPassword",
+      "accessType": "EXECUTE"
+    }
+  ],
+  "methods": {}
+}

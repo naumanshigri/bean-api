@@ -1,0 +1,40 @@
+{
+  "name": "walkthrough",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "created": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

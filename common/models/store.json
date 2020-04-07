@@ -1,0 +1,42 @@
+{
+  "name": "store",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lat": {
+      "type": "string",
+      "required": true
+    },
+    "lon": {
+      "type": "string",
+      "required": true
+    },
+    "openningTime": {
+      "type": "date"
+    },
+    "closeTime": {
+      "type": "date"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

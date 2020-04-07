@@ -1,0 +1,50 @@
+{
+  "name": "profile",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fullName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "rewardsPoint": {
+      "type": "number"
+    },
+    "created": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true,
+        "disableInclude": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

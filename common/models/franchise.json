@@ -1,0 +1,61 @@
+{
+  "name": "franchise",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "string"
+    },
+    "lon": {
+      "type": "string"
+    },
+    "openningTime": {
+      "type": "date"
+    },
+    "closeTime": {
+      "type": "date"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orderProducts": {
+      "type": "hasMany",
+      "model": "orderProduct",
+      "foreignKey": "franchiesId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "franchise"
+    },
+    "inventories": {
+      "type": "hasMany",
+      "model": "inventory",
+      "foreignKey": "franchiesId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "inventory"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

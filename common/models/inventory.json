@@ -1,0 +1,86 @@
+{
+  "name": "inventory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "inStock": {
+      "type": "boolean"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "product",
+      "foreignKey": "productId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "franchise": {
+      "type": "belongsTo",
+      "model": "franchise",
+      "foreignKey": "franchiseId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "franchiesAdmin",
+      "permission": "ALLOW",
+      "property": "deleteStock"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "franchiesAdmin",
+      "permission": "ALLOW",
+      "property": "updateStock"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "franchiesAdmin",
+      "permission": "ALLOW",
+      "property": "checkStock"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "checkStock"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,42 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "MySql": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "beandb",
+    "password": "Abc12345678",
+    "name": "MySql",
+    "user": "root",
+    "connector": "mysql"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "nomeapptesting@gmail.com",
+          "pass": "nomege1234"
+        }
+      }
+    ]
+  },
+  "aws": {
+    "name": "aws",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "keyId": "AKIAUAVIHGKTTG7MNXTI",
+    "key": "tqljIl0UbOMZUNTiB7+ilg94tOM0qCsrxdQ7iano"
+  }
+}

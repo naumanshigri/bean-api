@@ -1,0 +1,142 @@
+{
+  "name": "orderProduct",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "size": {
+      "type": "string"
+    },
+    "brownSugar": {
+      "type": "string"
+    },
+    "extrainstructions": {
+      "type": "string"
+    },
+    "cups": {
+      "type": "string"
+    },
+    "miligram": {
+      "type": "string"
+    },
+    "here": {
+      "type": "string"
+    },
+    "regular": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "decaf": {
+      "type": "boolean"
+    },
+    "whippedCream": {
+      "type": "boolean"
+    },
+    "tobeGranded": {
+      "type": "boolean"
+    },
+    "extraHot": {
+      "type": "boolean"
+    },
+    "extraShot": {
+      "type": "boolean"
+    },
+    "extraPocket": {
+      "type": "boolean"
+    },
+    "smoothes": {
+      "type": "boolean"
+    },
+    "foam": {
+      "type": "boolean"
+    },
+    "Temperature": {
+      "type": "boolean"
+    },
+    "roomTemperature": {
+      "type": "boolean"
+    },
+    "milkType": {
+      "type": "string"
+    },
+    "soucesType": {
+      "type": "string"
+    },
+    "flavoursType": {
+      "type": "string"
+    },
+    "CreamsType": {
+      "type": "string"
+    },
+    "pickUpSlots": {
+      "type": "string"
+    },
+    "Addmore": {
+      "type": "string"
+    },
+    "totalPrice": {
+      "type": "number"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": "orderId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "product": {
+      "type": "belongsTo",
+      "model": "product",
+      "foreignKey": "productId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "franchise": {
+      "type": "belongsTo",
+      "model": "franchise",
+      "foreignKey": "franchiseId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

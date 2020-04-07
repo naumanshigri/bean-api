@@ -1,0 +1,59 @@
+{
+  "name": "order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "orderStatus": {
+      "type": "string"
+    },
+    "paymentStatus": {
+      "type": "string"
+    },
+    "productList": {
+      "type": "string"
+    },
+    "CreatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "LastUpdated": {
+      "type": "date"
+    },
+    "UpdatedBy": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": "userId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "orderProducts": {
+      "type": "hasMany",
+      "model": "orderProduct",
+      "foreignKey": "orderId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "order"
+    },
+    "location": {
+      "type": "belongsTo",
+      "model": "location",
+      "foreignKey": "locationId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
